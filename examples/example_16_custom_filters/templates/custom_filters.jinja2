@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Twoje karty</title>
+</head>
+<body>
+Twoje karty płatnicze
+<ul>
+{%  for number in card_numbers %}
+<li>{{  number | hide_card_number }}</li>
+{%  endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mój sklep</title>
+</head>
+<body>
+<table>
+<thead>
+<tr><th>Nazwa</th><th>Producent</th><th>Cena (PLN)</th><th>Dostępność</th></tr>
+</thead>
+<tbody>
+    {%  for product in products %}
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.manufacturer }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+            {% if product.available %}
+            Dostępny
+            {%  else %}
+            Brak w magazynie
+            {%  endif %}
+        </td>
+    </tr>
+    {%  endfor %}
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mój sklep</title>
+</head>
+<body>
+<h2>Liczby</h2>
+<ul>
+    <li>Wszystkie liczby {{ numbers }}</li>
+    <li>Maksymalna z przekazanych liczb {{ numbers | max }}</li>
+    <li>Minimalna z przekazanych liczb {{ numbers | min }}</li>
+    <li>Wszystkie liczby oddzielone przecinkiem {{ numbers | join(",") }}</li>
+    <li>Suma liczb {{ numbers | sum }}</li>
+    <li>Liczby w odwrotnej kolejności {{ numbers | reverse | join(" ") }}</li>
+</ul>
+<h2>Napisy</h2>
+<ul>
+    <li>Oryginalny napis: {{  string }}</li>
+    <li>Wszystkie litery duże: {{ string | upper }}</li>
+    <li>Wszystkie litery małe: {{ string | lower }}</li>
+    <li>Napis obcięty do 11 znaków: {{ string | truncate(11, True) }}</li>
+    <li>W napisie jest tyle słów: {{ string | wordcount }}</li>
+</ul>
+</body>
+</html>
