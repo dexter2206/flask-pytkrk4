@@ -11,7 +11,7 @@ def post_json():
     # Remember, this will only work if the correct content type is set in the request.
     # Alternatively, you can forcefuly interpret incoming data as json by passing
     # force=True to request.get_json()
-    return "\n".join(f"{key}: {value}" for key, value in request.get_json())
+    return "\n".join(f"{key}: {value}" for key, value in request.get_json().items())
 
 
 @app.route("/outgoing-json", methods=["GET"])

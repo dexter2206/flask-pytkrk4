@@ -24,3 +24,7 @@ def resp_obj1():
     resp.content_type = "application/json"
     resp.status_code = 301
     return resp
+
+
+if __name__ == '__main__':
+    app.run()
