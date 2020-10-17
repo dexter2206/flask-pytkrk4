@@ -18,4 +18,9 @@ def post_json():
 def get_json():
     # jsonify works like a json.dumps function. but wraps the encoded
     # json in a response object
-    return jsonify({"foo": 2, "bar": 3})
+    response = jsonify({"foo": 2, "bar": 3})
+    return response
+
+
+if __name__ == '__main__':
+    app.run()
