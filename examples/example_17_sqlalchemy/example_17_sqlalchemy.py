@@ -1,10 +1,7 @@
 # Example 17: using Flask with SQLAlchemy
 import pathlib
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
-# The jsonify function is enhanced version of json.dumps.
-# Amongst other differences, it sorts the keys, preventing disrupting of caches.
-from flask.json import jsonify
 
 # Import relevant model and engine.
 from examples.models import db, Genre
@@ -13,17 +10,18 @@ app = Flask(__name__)
 
 # During classes, my DB file will reside here
 DB_FILE_PATH = pathlib.Path(__file__).parent.parent.parent / "chinook.db"
-print(DB_FILE_PATH)
+
 
 # For the engine to work we need to configure database URI
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_FILE_PATH}"
+
 # And initialize it with an app
 db.init_app(app)
 
 
 @app.route("/genres", methods=["GET"])
 def get_all_genres():
-    response = jsonify([genre.to_dict() for genre  in db.session.query(Genre)])
+    response = jsonify([genre.to_dict() for genre in db.session.query(Genre)])
     return response
 
 
@@ -55,8 +53,8 @@ def get_genre(genre_id):
     # Query is done as usual with SQLAlchemy.
     # The only difference is that query sets now have (...)_or_404 methods
     # that terminate execution if query is empty.
-    dept = db.session.query(Genre).filter_by(id=genre_id).first_or_404()
-    return jsonify(dept.to_dict())
+    genre = db.session.query(Genre).filter_by(id=genre_id).first_or_404()
+    return jsonify(genre.to_dict())
 
 
 # Resource for patching genre, i.e. modifying part of the object.
@@ -76,8 +74,8 @@ def patch_genre(genre_id):
 # Resource for deleting genre
 @app.route("/genres/<int:genre_id>", methods=["DELETE"])
 def delete_genre(genre_id):
-    dept = db.session.query(Genre).filter_by(id=genre_id).first_or_404()
-    db.session.delete(dept)
+    genre = db.session.query(Genre).filter_by(id=genre_id).first_or_404()
+    db.session.delete(genre)
     db.session.commit()
     return jsonify("")
 
@@ -87,7 +85,7 @@ def delete_genre(genre_id):
 # we want JSON response instead.
 @app.errorhandler(404)
 def handle_404(error):
-    response = jsonify(error=404, text=str(error))
+    response = jsonify({"error": 404, "text": str(error)})
     response.status_code = 404
     return response
 
