@@ -50,9 +50,10 @@ pip install -r requirements.txt
 8. Przerobić rozwiązanie z zadania 5 w taki sposób, aby korzystało ono z fabryki do tworzenia obiektku aplikacji.
    
 9. Dodać do rozwiązania z zadania 5 testy sprawdzające działanie wybranych endpointów. Pamiętać o używaniu
-   albo testowej bazy na dysku, albo bazy w pamięci.
+   albo testowej bazy na dysku, albo bazy w pamięci. Przetestować zarówno endpoint pobierający dane, jak i
+   wysyłająćy i usuwający obiekty.
   
-7. Przerobić rozwiązanie z zadanie 5. w taki sposób, aby przychodzące dane były walidowane przy pomocy modeli
+10. Przerobić rozwiązanie z zadanie 5. w taki sposób, aby przychodzące dane były walidowane przy pomocy modeli
    Pydantic.
+
    
-7. 
