@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<h1>{{ album.title }}</h1>
+<h2>by {{ album.artist.name }}</h2>
+Tracklist
+<ol>
+    {%  for track in album.tracks %}
+    <li>{{ track.name }}</li>
+    {% endfor %}
+</ol>
+</body>
+</html>

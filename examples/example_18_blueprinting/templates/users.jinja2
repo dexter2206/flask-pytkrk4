@@ -1,0 +1,15 @@
+<html lang="en">
+
+<head>
+    <title>Page with Blueprints</title>
+</head>
+
+<body>
+<h1>Users in the system</h1>
+<ul>
+{%  for user in users %}
+    <li><b>{{   user.login }}</b> {{ user.email }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>

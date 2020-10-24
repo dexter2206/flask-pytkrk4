@@ -33,4 +33,26 @@ pip install -r requirements.txt
 4. Napisz konsolowego klienta aplikacji z powyższego zadania. Aplikacja powinna otrzymać od użytkownika argumenty działania oraz samo działanie. Następnie,
    powinna wykonać żądanie do napisanej przez Ciebie aplikacji webowej, oraz wyświetlić wynik.
    
-5. Napisać we flasku prostą aplikację webową służącą jako baza ksiązek. Dokładne instrukcje zostaną przekazane na zajęciach.
+5. W przykładzie 17 tworzyliśmy endpointy pozwalające na wykonywanie operacji CRUD na kilku kolekcjach obiektów
+   (Genre + dowolny obiekt wybrany przez kursantów w ramach ćwiczenia). Proszę przerobić aplikację z
+   przykładu 17 tak, aby endpointy operaujące na różnych modelach zostały zrealizowane przy pomocy blueprintów.
+   Na przykład, jeśli mamy endpointy operaujące na Genre i MediaType, należy utworzyć dwa Blueprinty, jeden
+   z operacjami dla Genre, drugi z operacjami dla MediaType.
+   
+6. Aplikacja z przykładu 19 posiada poważną niedoróbkę wydajnościową. Aby zrozumieć na czym polega problem wykonaj
+   następujące czynnośći:
+   - Ustaw opcję konfiguracyjną `SQLALCHEMY_ECHO` na wartość `True` podczas tworzenia obiektu aplikacji.
+   - Odwiedź w przeglądarce endpoint `/albums` (możesz też wysłać żądanie używając modułu `requests`)
+   - Zwróć uwagę na logi aplikacji. Czy widzisz na czym polega problem?
+   
+   Jeżeli udało Ci się zidentyfikować problem, spróbuj wyjaśnić dlaczego powstał, oraz zaproponuj poprawkę.
+ 
+8. Przerobić rozwiązanie z zadania 5 w taki sposób, aby korzystało ono z fabryki do tworzenia obiektku aplikacji.
+   
+9. Dodać do rozwiązania z zadania 5 testy sprawdzające działanie wybranych endpointów. Pamiętać o używaniu
+   albo testowej bazy na dysku, albo bazy w pamięci.
+  
+7. Przerobić rozwiązanie z zadanie 5. w taki sposób, aby przychodzące dane były walidowane przy pomocy modeli
+   Pydantic.
+   
+7. 
