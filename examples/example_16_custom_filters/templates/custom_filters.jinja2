@@ -6,8 +6,8 @@
 <body>
 Twoje karty płatnicze
 <ul>
-{%  for number in card_numbers %}
-<li>{{  number | hide_card_number }}</li>
+{% for number in card_numbers %}
+<li>{{ number | hide_card_number }}</li>
 {%  endfor %}
 </ul>
 </body>
