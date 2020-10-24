@@ -3,5 +3,5 @@ pytest==6.1.1
 sqlalchemy==1.3.20
 requests==2.24.0
 pydantic==1.6.1
-pydantic-webargs==1.0.1
 flask-sqlalchemy==2.4.4
+flask-pydantic==0.4.0
