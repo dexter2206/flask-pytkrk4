@@ -54,6 +54,22 @@ pip install -r requirements.txt
    wysyłająćy i usuwający obiekty.
   
 10. Przerobić rozwiązanie z zadanie 5. w taki sposób, aby przychodzące dane były walidowane przy pomocy modeli
-   Pydantic.
+    Pydantic.
+    
+11. Przy pomocy Flaska (lub FastAPI) napisać prostą aplikację do obsługi sklepu.
+    - Zaprojektować modele bazy danych
+    - Zaprojektować API udostępniane przez aplikację. Nie narzucam struktury, ale chciałbym, zeby:
+      - Można było dodawać i usuwać produkty. Produkt powinien mieć nazwę, producenta, cenę oraz
+        ilość w magazynie.
+      - Można było wyszukiwać produkty (np. cena większa/mniejsza niż..., nazwa zawierające....)
+      
+      Podziel API na dwa Blueprinty:
+      - Jeden do obsługi operacji CRUD na produktach
+      - Drugi do wyszukiwania
+      
+    Wymagania opcjonalne (ale wskazane):
+    - Testy, najlepiej do każdego endpointa
+    - Walidacja przychodzących danych przy pomocy Pydantica
+    - Konsolowy klient naszej aplikacji
 
    
