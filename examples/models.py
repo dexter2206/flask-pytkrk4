@@ -29,6 +29,9 @@ class Album(db.Model):
     artist = db.relationship(Artist, back_populates="albums")
     tracks = db.relationship("Track", back_populates="album")
 
+    def to_dict(self):
+        return {"id": self.id, "title": self.title, "artist": self.artist.name}
+
     def __repr__(self):
         return f"<Album(id={self.id}, title={self.title})>"
 
