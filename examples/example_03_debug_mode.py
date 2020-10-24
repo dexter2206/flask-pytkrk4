@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def broken_route():
     a = 10
-    b = 0
+    b = 5
     return str(a / b)
 
 
